@@ -1,0 +1,2 @@
+[08-Apr-2016 02:39:21 America/Chicago] PHP Parse error:  syntax error, unexpected '$product_minimum_quantity' (T_VARIABLE) in /home/paperwal/public_html/wholesale/admin/add_category.php on line 17
+[08-Apr-2016 04:21:42 America/Chicago] PHP Fatal error:  Call to undefined function update_database() in /home/paperwal/public_html/wholesale/admin/add_category.php on line 48

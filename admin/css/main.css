@@ -1,0 +1,67 @@
+.margin-0			 { margin: 0px; }
+.margin-10 		  	 { margin: 10px;  }
+.margin-top-15		 { margin-top: 15px; }
+.margin_top_70 		 { margin-top: 70px; }
+.margin_top_78 	  	 { margin-top: 78px; }
+.margin-bottom-5 	 { margin-bottom: 5px; }
+.margin-bottom-10 	 { margin-bottom: 10px; }
+.margin_bottom_15	 { margin-bottom: 15px; }
+.margin-bottom-20 	 { margin-bottom: 20px; }
+.margin-bottom-40 	 { margin-bottom: 40px; }
+.margin-bottom-64 	 { margin-bottom: 64px; }
+.margin-bottom-78 	 { margin-bottom: 78px; }
+.margin-tb-10 	  	 { margin-top: 10px; margin-bottom: 10px; }
+.margin_topBottom_74 { margin-top: 74px; margin-bottom: 74px; }
+.margin_topBottom_86 { margin-top: 86px; margin-bottom: 86px; }
+
+
+.padding-tb-5		{ padding-top: 5px; padding-bottom: 5px; }
+.padding-tb-10 		{ padding-top: 10px; padding-bottom: 10px; }
+.padding-tb-15	 	{ padding-top: 15px; padding-bottom: 15px; }
+.padding_leftRight_zero { padding-left: 0px; padding-right: 0px; }
+.padding_left_0 	{ padding-left: 0px; }
+.padding-left-3		{ padding-left: 3px; }
+.padding-right-0 	{ padding-right: 0px; }
+.padding-right-3 	{ padding-right: 3px; }
+.padding-bottom-5 	{ padding-bottom: 5px }
+
+/**** FONTS ****/
+.open_sans 			{ font-family: 'Open Sans', sans-serif; }
+
+/***** FONT STYLE *****/
+.font_bold 			{ font-weight: bold; }
+.font_underline 	{ text-decoration: underline; }
+
+.font_black 		{ color: #000; }
+.font-white 		{ color: #fff; }
+.font-blue 			{ color: #0000ff; }
+
+.font_16 			{ font-size: 16px; }
+.font_24 			{ font-size: 24px; }
+.font_27 			{ font-size: 27px; }
+
+.font-weight-400 	{ font-weight: 400; }
+
+/**** BACKGROUNDS ****/
+.background_grey 	{ background-color: #D9D9D9; }
+
+
+/****** Border radius ******/
+.border_radius_3 {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.remove-button {
+	border: 1px solid #cccccc;
+	padding: 5px;
+	margin-right: 5px;
+}
+.cursor-pointer 	{ cursor: pointer; }
+
+.text-decoration-none:hover { text-decoration: none; }
+
+.section 			{  }
+
+.button-background-00A7E5, .button-background-00A7E5:hover, .button-background-00A7E5:active, .button-background-00A7E5:focus { background-color: #00A7E5 !important; }
