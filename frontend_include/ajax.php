@@ -97,11 +97,16 @@ if( isset($_REQUEST['action']) && trim($_REQUEST['action']) == 'get_all_products
 						   );
 	$order_array_for_mail = array();
 
+	/*echo "<pre>";
+	print_r($product_category);
+	print_r($submit_response['product_requirement']);
+	echo "</pre>";*/
+
 	foreach ($submit_response['product_requirement'] as $requirement_details) {
 		$requirement_details;
 		$product_category;
-		$array_key = get_stuff_from_product_id($requirement_details['product_id'], 'category_name', $product_category);
-		$order_array_for_mail[$array_key] = array($requirement_details['product_id'] => $requirement_details['product_id']);
+		$array_key = get_stuff_from_product_id($requirement_details['product_category'], 'category_name', $product_category);
+		$order_array_for_mail[$array_key] = array($requirement_details['product_id'] => $requirement_details['product_quantity']);
 	}
 
 	$send_data = array('user_details'  => $insert_data,

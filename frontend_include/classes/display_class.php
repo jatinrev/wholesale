@@ -69,6 +69,10 @@ class display_class extends list_class
 	}
 
 	function send_mail( $to_email, $send_data = array(), $subject, $random_number) {
+		/*echo "<pre>";
+		print_r($send_data);
+		echo "</pre>";
+		die;*/
 		$to            =  $to_email;
 		$subject       =  'Paperwallet Wholesale Order Po-'.$random_number;
 
@@ -225,6 +229,7 @@ class display_class extends list_class
 
 	function get_shorthand_name($input) {
 		$input = trim($input);
+		return $input;
 		$category_name = array('THE ORIGAMI (STANDARD WALLET)'   =>	'ORIGAMI',
 							   'THE ORLY (Clutch)'               =>	'ORLY',
 							   'THE ESSENTIALS (Classic Wallet)' =>	'ESSENTIALS',
