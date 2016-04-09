@@ -5,15 +5,7 @@ require_once ROOT_DIRECTORY_PATH."admin/classes/list_class.php";
 */
 class display_class extends list_class
 {
-	public $all_products = array('clutch'          => array(),
-								 'bag'             => array(),
-								 'duffle_bag'      => array(),
-								 'tote_bag'        => array(),
-								 'standard_wallet' => array(),
-								 'classic_wallet'  => array(),
-								 'coin_pouch'      => array(),
-								 'card_holder'     => array()
-								 );
+	public $all_products = array();
 
 	/**
 	 * @param  [type] $category ('clutch', 'standard_wallet', 'classic_wallet', 'coin_pouch', 'card_holder')

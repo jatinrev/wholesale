@@ -5,9 +5,6 @@
 
 
 include 'include/header.php';
-include 'classes/list_class.php';
-
-$list_class_ob = new list_class();
 
 if( isset($_REQUEST['action']) && trim($_REQUEST['action']) == 'delete_product' && isset($_REQUEST['id']) && is_numeric($_REQUEST['id']) ) {
 	$list_class_ob->delete_full_product( trim($_REQUEST['id']) );

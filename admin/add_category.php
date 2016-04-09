@@ -2,6 +2,8 @@
 include 'include/header.php';
 
 $insert_output = array();
+$go_edit       = false;
+
 if ( isset($_REQUEST['addProductCategory']) 		&&
 	 isset($_REQUEST['productCategoryName']) 		&& trim($_REQUEST['productCategoryName']) != '' 	 &&
 	 isset($_REQUEST['product_minimum_quantity']) 	&& is_numeric($_REQUEST['product_minimum_quantity']) &&

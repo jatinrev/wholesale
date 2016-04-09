@@ -25,10 +25,11 @@ require_once('include/formFieldsValidation.php');
 require_once('include/common.php');
 
 require_once('include/functions.php');
+require_once('classes/list_class.php');
 
 $mysqlDbOb              = new mysqlDbClass();
 $formFieldsValidationOb = new formFieldsValidation();
-
+$list_class_ob          = new list_class();
 
 
 ?>

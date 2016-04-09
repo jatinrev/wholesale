@@ -6,14 +6,26 @@ $display_class_ob = new display_class();
 if( isset($_REQUEST['action']) && trim($_REQUEST['action']) == 'get_all_products' ) {
 	$all_categories = $display_class_ob->get_product_categories()->all_categories;
 
+	foreach ($all_categories as $value) {
+		$display_class_ob->get_product($value['id']);
+	}
 
-	echo json_encode( $display_class_ob->get_product('standard_wallet')->get_product('clutch')->get_product('bag')->get_product('duffle_bag')->get_product('tote_bag')->get_product('classic_wallet')->get_product('coin_pouch')->get_product('card_holder') );
+	echo json_encode( $display_class_ob );
 
 } else if( isset($_REQUEST['action']) && trim($_REQUEST['action']) == 'submit_wholesale' &&
 		   isset($_REQUEST['data_key']) && trim($_REQUEST['data_key']) != ''
 		  ) {
 
+	function get_stuff_from_product_id($product_id, $key, $all_category) {
+		foreach ($all_category as $value) {
+			if($product_id == $value['id']) {
+				return $value[$key];
+			}
+		}
+	}
+
 	$submit_response = json_decode($_REQUEST['data_key'], true);
+
 	$submit_response['form_data_key']['city'] = (isset($submit_response['form_data_key']['city']) ? trim($submit_response['form_data_key']['city']) : '' );
 	$error = array();
 
@@ -42,6 +54,7 @@ if( isset($_REQUEST['action']) && trim($_REQUEST['action']) == 'get_all_products
 		die;
 	}
 
+
 	if( isset($submit_response['form_data_key']['city']) && trim($submit_response['form_data_key']['city']) != '' ) {
 		$submit_response['form_data_key']['city'] = str_replace('_', ' ', $submit_response['form_data_key']['city']);
 	}
@@ -65,14 +78,11 @@ if( isset($_REQUEST['action']) && trim($_REQUEST['action']) == 'get_all_products
 														WS_ALL_ORDERS
 														);
 
+	$product_category = $display_class_ob->get_product_categories()->all_categories;
 
-	$array = array('standard_wallet', 'clutch', 'classic_wallet', 'coin_pouch', 'card_holder');
-	foreach ($array as $value) {
-		if( isset($submit_response[$value]) && count($submit_response[$value]) > 0 ) {
-			foreach ($submit_response[$value] as $product_id => $product_quantity) {
-				$display_class_ob->submit_order($insert_query_result, $value, $product_id, $product_quantity);
-			}
-		}
+	// inserting in order detail page.
+	foreach ($submit_response['product_requirement'] as $requirement_data) {
+		$display_class_ob->submit_order($insert_query_result, $requirement_data['product_category'], $requirement_data['product_id'], $requirement_data['product_quantity']);
 	}
 
 	$category_name = array('standard_wallet' => 'THE_ORIGAMI_(STANDARD WALLET)',

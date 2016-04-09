@@ -94,14 +94,12 @@ if( isset($_REQUEST['addProduct']) ){
     <div class="form-group">
       <label for="category_field">Category field</label>
       <select name="category_field" id="category_field" class="form-control">
-        <option value="standard_wallet">standard wallet</option>
-        <option value="clutch">clutch</option>
-        <option value="bag">Rope (Bag)</option>
-        <option value="duffle_bag">Duffle (Bag)</option>
-        <option value="tote_bag">Tote (Bag)</option>
-        <option value="classic_wallet">classic wallet</option>
-        <option value="coin_pouch">coin pouch</option>
-        <option value="card_holder">card holder</option>
+        <?php
+        $all_category = $list_class_ob->get_product_categories()->all_categories;
+        foreach ($all_category as $value) {
+          echo '<option value="'.$value['id'].'">'.$value['category_name'].'</option>';
+        }
+        ?>
       </select>
     </div>
 
