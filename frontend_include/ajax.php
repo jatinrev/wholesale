@@ -26,6 +26,10 @@ if( isset($_REQUEST['action']) && trim($_REQUEST['action']) == 'get_all_products
 
 	$submit_response = json_decode($_REQUEST['data_key'], true);
 
+	/*echo "<pre>";
+	print_r($submit_response);
+	echo "</pre>";*/
+
 	$submit_response['form_data_key']['city'] = (isset($submit_response['form_data_key']['city']) ? trim($submit_response['form_data_key']['city']) : '' );
 	$error = array();
 
@@ -93,10 +97,11 @@ if( isset($_REQUEST['action']) && trim($_REQUEST['action']) == 'get_all_products
 						   );
 	$order_array_for_mail = array();
 
-	foreach ($array as $category_slug) { // $category_slug = standard_wallet
-		if( isset($submit_response[$category_slug]) && count($submit_response[$category_slug]) > 0 ) {
-			$order_array_for_mail[ $category_name[$category_slug] ] = $submit_response[$category_slug];
-		}
+	foreach ($submit_response['product_requirement'] as $requirement_details) {
+		$requirement_details;
+		$product_category;
+		$array_key = get_stuff_from_product_id($requirement_details['product_id'], 'category_name', $product_category);
+		$order_array_for_mail[$array_key] = array($requirement_details['product_id'] => $requirement_details['product_id']);
 	}
 
 	$send_data = array('user_details'  => $insert_data,

@@ -217,6 +217,8 @@ class display_class extends list_class
 		$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 		// Additional headers
 		$headers .= 'From: Paperwallet <Support@paperwallet.com>' . "\r\n";
+		echo $message;
+		die;
       	mail($to, $subject, $message, $headers);
         mail('Support@paperwallet.com', $subject, $message, $headers);
 	}
